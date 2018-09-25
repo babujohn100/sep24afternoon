@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .darkness {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .light {
+            background-color: lemonchiffon;
+            color: blue;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body id="mainContent" class="darkness">
+
+    <div class="row">
+        <div class="col">
+
+            <img id="lightBulb1" src="img/bulboff.gif" width="100px">
+
+            <img id="lightBulb2" src="img/bulboff.gif" width="100px">
+            <img id="lightBulb3" src="img/bulboff.gif" width="100px">
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <img id="switch" src="img/switch_off.jpg " width="100">
+
+            <img id="switch2" src="img/switch_off.jpg " width="100">
+
+            <img id="switch3" src="img/switch_off.jpg " width="100 ">
+        </div>
+    </div>
+
+    <div id="status "></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
+    <script>
+        $("#switch").click(function() {
+            if ($("#switch").attr("src") == "img/switch_off.jpg") {
+                $("#switch").attr("src", "img/switch_on.png");
+                bulbon(1);
+            }
+
+            else {
+                $("#switch").attr("src", "img/switch_off.jpg");
+                bulboff(1);
+            }
+        });
+        
+        $("#switch2").click(function() {
+            if ($("#switch2").attr("src") == "img/switch_off.jpg") {
+                $("#switch2").attr("src", "img/switch_on.png");
+                bulbon(2);
+            }
+
+            else {
+                $("#switch2").attr("src", "img/switch_off.jpg");
+                bulboff(2);
+            }
+        });
+        
+        
+         $("#switch3").click(function() {
+            if ($("#switch3").attr("src") == "img/switch_off.jpg") {
+                $("#switch3").attr("src", "img/switch_on.png");
+                bulbon(3);
+            }
+
+            else {
+                $("#switch3").attr("src", "img/switch_off.jpg");
+                bulboff(3);
+            }
+        });
+
+
+        // let bulbImage = document.getElementById("lightBulb ");
+        // let statusText = document.getElementById("status ");
+        // let mainContent = document.getElementById("mainContent ");
+
+        function bulbon(num) {
+            $("#lightBulb"+num).attr("src", "img/bulbon.gif ");
+            $("#status ").html("<h2>It's too bright in here!</h2>");
+            $("mainContent").removeclass("darkness").addClass("light");
+        }
+
+        function bulboff(num) {
+            $("#lightBulb"+num).attr("src", "img/bulboff.gif");
+            $("#status").html("<h2>It's dark in here!</h2>");
+            $("#mainContent").removeClass("light").addClass("darkness");
+        }
+
+        // function bulbon2() {
+        //     $("#lightBulb2 ").attr("src", "img/bulbon.gif ");
+        //     $("#status ").html("<h2>It's too bright in here!</h2>");
+        //     $("mainContent").removeclass("darkness").addClass("light");
+        // }
+
+        // function bulboff2() {
+        //     $("#lightBulb2").attr("src", "img/bulboff.gif");
+        //     $("#status").html("<h2>It's dark in here!</h2>");
+        //     $("#mainContent").removeClass("light").addClass("darkness");
+        // }
+        
+        // function bulbon3() {
+        //     $("#lightBulb3 ").attr("src", "img/bulbon.gif ");
+        //     $("#status ").html("<h2>It's too bright in here!</h2>");
+        //     $("mainContent").removeclass("darkness").addClass("light");
+        // }
+
+        // function bulboff3() {
+        //     $("#lightBulb3").attr("src", "img/bulboff.gif");
+        //     $("#status").html("<h2>It's dark in here!</h2>");
+        //     $("#mainContent").removeClass("light").addClass("darkness");
+        // }
+    </script>
+
+</body>
+
+</html>
